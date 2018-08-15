@@ -28,4 +28,12 @@ public class UserController {
         return userService.findUser(user);
 
     }
+
+
+    @RequestMapping("save-user.api")
+    public Object saveUser(@ModelAttribute User user, HttpServletRequest request) {
+        LOGGER.info("request input:{}", user.toString());
+        return userService.saveUser(user);
+
+    }
 }
